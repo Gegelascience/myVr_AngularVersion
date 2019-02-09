@@ -1,7 +1,7 @@
 export class Eiffel {
   constructor(AFRAME: any, THREE: any) {
     /**
-    * Primitive de la tour Eiffel
+    * Composant de la tour Eiffel
     */
     const colorEtage = '#404040';
     const colorSocle = '#ded4d1';

@@ -1,8 +1,87 @@
 export class Car {
   constructor(AFRAME: any, THREE: any) {
     /**
-     * Component d'une voiture'
+     * Component d'une voiture
      */
+
+    AFRAME.registerComponent('parechocs', {
+      schema: {
+        color: { type: 'color', default: 'red' }
+      },
+      init: function () {
+        const data = this.data;
+        const el = this.el;
+
+        const shAv = new THREE.Shape();
+        shAv.moveTo(1, 0);
+        shAv.lineTo(0, 0);
+        shAv.lineTo(0, 1.5);
+        shAv.lineTo(0.5, 1.5);
+        shAv.lineTo(1, 0);
+
+        const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 2 };
+        this.geometry = new THREE.ExtrudeGeometry(shAv, extrudeSettings);
+        this.material = new THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        el.setObject3D(this.attrName, this.mesh);
+
+      },
+      remove: function () {
+        this.el.removeObject3D('mesh');
+      }
+    });
+
+    AFRAME.registerComponent('fenetreav', {
+      schema: {
+        color: { type: 'color', default: 'black' }
+      },
+      init: function () {
+        const data = this.data;
+        const el = this.el;
+
+        const sht = new THREE.Shape();
+        sht.moveTo(1, 0);
+        sht.lineTo(0, 0);
+        sht.lineTo(0, 2);
+        sht.lineTo(1, 0);
+
+        const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 2 };
+        this.geometry = new THREE.ExtrudeGeometry(sht, extrudeSettings);
+        this.material = new THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        el.setObject3D(this.attrName, this.mesh);
+
+      },
+      remove: function () {
+        this.el.removeObject3D('mesh');
+      }
+    });
+
+    AFRAME.registerComponent('fenetrear', {
+      schema: {
+        color: { type: 'color', default: 'black' }
+      },
+      init: function () {
+        const data = this.data;
+        const el = this.el;
+
+        const sht = new THREE.Shape();
+        sht.moveTo(1, 0);
+        sht.lineTo(0, 0);
+        sht.lineTo(0, 0.5);
+        sht.lineTo(1, 0);
+
+        const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 2 };
+        this.geometry = new THREE.ExtrudeGeometry(sht, extrudeSettings);
+        this.material = new THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        el.setObject3D(this.attrName, this.mesh);
+
+      },
+      remove: function () {
+        this.el.removeObject3D('mesh');
+      }
+    });
 
     AFRAME.registerComponent('car', {
       schema: {
@@ -37,18 +116,7 @@ export class Car {
         this.el.appendChild(fenetre);
 
         const triangle = document.createElement('a-entity');
-        const sht = new THREE.Shape();
-        sht.moveTo(1, 0);
-        sht.lineTo(0, 0);
-        sht.lineTo(0, 2);
-        sht.lineTo(1, 0);
-
-        const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 2 };
-        const geometryT = new THREE.ExtrudeGeometry(sht, extrudeSettings);
-
-        const materialT = new THREE.MeshBasicMaterial({ color: teintefenetre });
-        const meshT = new THREE.Mesh(geometryT, materialT);
-        triangle.setObject3D(this.attrName, meshT);
+        triangle.setAttribute('fenetreav', '');
         const xt = 0.5 + triangleSens[0];
         const zt = 1 - triangleSens[1];
         triangle.setAttribute('position', xt + space + 1.5 + space + zt);
@@ -56,23 +124,13 @@ export class Car {
         this.el.appendChild(triangle);
 
         const triangle2 = document.createElement('a-entity');
-        const sht2 = new THREE.Shape();
-        sht2.moveTo(1, 0);
-        sht2.lineTo(0, 0);
-        sht2.lineTo(0, 0.5);
-        sht2.lineTo(1, 0);
-
-        const geometryT2 = new THREE.ExtrudeGeometry(sht2, extrudeSettings);
-        const meshT2 = new THREE.Mesh(geometryT2, materialT);
-        triangle2.setObject3D(this.attrName, meshT2);
+        triangle2.setAttribute('fenetrear', '');
         const xt2 = -2.5 + triangleSens2[0];
         const zt2 = -1 + triangleSens2[1];
+        const ryt2 = 180 + rotY;
         triangle2.setAttribute('position', xt2 + space + 1.5 + space + zt2);
-        triangle2.setAttribute('rotation', {
-          x: 180,
-          y: 180 + rotY,
-          z: -90
-        });
+        triangle2.setAttribute('rotation', 180 + space + ryt2 + space + -90);
+
         this.el.appendChild(triangle2);
 
         // corps
@@ -84,28 +142,13 @@ export class Car {
         corps.setAttribute('geometry', 'height:' + 1);
         this.el.appendChild(corps);
 
-        // avant
+        // parechocs
         const avant = document.createElement('a-entity');
-        const shAv = new THREE.Shape();
-        shAv.moveTo(1, 0);
-        shAv.lineTo(0, 0);
-        shAv.lineTo(0, 1.5);
-        shAv.lineTo(0.5, 1.5);
-        shAv.lineTo(1, 0);
-
-
-        const geometryAv = new THREE.ExtrudeGeometry(shAv, extrudeSettings);
-        const materialAv = new THREE.MeshBasicMaterial({ color: this.data.teinte });
-        const meshAv = new THREE.Mesh(geometryAv, materialAv);
-        avant.setObject3D(this.attrName, meshAv);
+        avant.setAttribute('parechocs', 'color:' + this.data.teinte);
         const xAv = 4 - avantSens[0];
         const zAv = 1 - avantSens[1];
         avant.setAttribute('position', xAv + space + 0.5 + space + zAv);
-        avant.setAttribute('rotation', {
-          x: 180,
-          y: 0 + rotY,
-          z: -90
-        });
+        avant.setAttribute('rotation', 180 + space + rotY + space + -90);
         this.el.appendChild(avant);
 
         // roues
