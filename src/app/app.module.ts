@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SolarSystemComponent } from './components/solar-system/solar-system.component';
 import { MarsFieldComponent } from './components/mars-field/mars-field.component';
 import { HomeComponent } from './components/home/home.component';
+import { NavigatorComponent } from './components/navigator/navigator.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HomeComponent } from './components/home/home.component';
     SolarSystemComponent,
     MarsFieldComponent,
     HomeComponent,
+    NavigatorComponent,
 
   ],
   imports: [
