@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Planet } from 'src/app/class/planet';
 
- declare var AFRAME:any;
+declare var AFRAME: any;
 
 @Component({
   selector: 'app-solar-system',
@@ -10,8 +10,8 @@ import { Planet } from 'src/app/class/planet';
 })
 export class SolarSystemComponent implements OnInit {
 
-  planet:Planet;
-  
+  planet: Planet;
+
   constructor() { }
 
   ngOnInit() {
