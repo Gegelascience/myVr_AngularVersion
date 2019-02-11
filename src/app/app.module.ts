@@ -7,6 +7,7 @@ import { SolarSystemComponent } from './components/solar-system/solar-system.com
 import { MarsFieldComponent } from './components/mars-field/mars-field.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NavigatorComponent } from './components/navigator/navigator.component';
     MarsFieldComponent,
     HomeComponent,
     NavigatorComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [

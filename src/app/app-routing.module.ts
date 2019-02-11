@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { SolarSystemComponent } from './components/solar-system/solar-system.component';
 import { MarsFieldComponent } from './components/mars-field/mars-field.component';
 import { HomeComponent } from './components/home/home.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
