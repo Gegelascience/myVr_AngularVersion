@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Planet } from 'src/app/class/planet';
+import { CustomAframeComponentsService } from 'src/app/services/custom-aframe-components.service';
 
 declare var AFRAME: any;
+declare var THREE: any;
 
 @Component({
   selector: 'app-solar-system',
@@ -10,12 +11,12 @@ declare var AFRAME: any;
 })
 export class SolarSystemComponent implements OnInit {
 
-  planet: Planet;
-
-  constructor() { }
+  constructor(private customAframeService: CustomAframeComponentsService) { }
 
   ngOnInit() {
-    this.planet = new Planet(AFRAME);
+    this.customAframeService.registerPlanet(AFRAME, THREE);
+    this.customAframeService.registerTrajectory(AFRAME, THREE);
+    this.customAframeService.registerRings(AFRAME, THREE);
   }
 
 }

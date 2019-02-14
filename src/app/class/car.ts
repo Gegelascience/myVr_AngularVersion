@@ -27,7 +27,7 @@ export class Car {
 
       },
       remove: function () {
-        this.el.removeObject3D('mesh');
+        // this.el.removeObject3D('mesh');
       }
     });
 
@@ -53,7 +53,7 @@ export class Car {
 
       },
       remove: function () {
-        this.el.removeObject3D('mesh');
+        // this.el.removeObject3D('mesh');
       }
     });
 
@@ -79,7 +79,7 @@ export class Car {
 
       },
       remove: function () {
-        this.el.removeObject3D('mesh');
+        // this.el.removeObject3D('mesh');
       }
     });
 

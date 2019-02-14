@@ -41,8 +41,7 @@ export class Eiffel {
       },
 
       remove: function () {
-        // Do something the component or its entity is detached.
-        this.el.removeObject3D('mesh');
+        // this.el.removeObject3D('mesh');
       },
 
     });
@@ -79,8 +78,7 @@ export class Eiffel {
       },
 
       remove: function () {
-        // Do something the component or its entity is detached.
-        this.el.removeObject3D('mesh');
+        // this.el.removeObject3D('mesh');
       },
 
     });

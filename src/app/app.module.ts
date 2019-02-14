@@ -8,6 +8,7 @@ import { MarsFieldComponent } from './components/mars-field/mars-field.component
 import { HomeComponent } from './components/home/home.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { CustomAframeComponentsService } from './services/custom-aframe-components.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CustomAframeComponentsService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tree } from 'src/app/class/tree';
-import { GreenArea } from 'src/app/class/green-area';
-import { Car } from 'src/app/class/car';
-import { CamMove } from 'src/app/class/cam-move';
-import { Eiffel } from 'src/app/class/eiffel';
+import { CustomAframeComponentsService } from 'src/app/services/custom-aframe-components.service';
 
 declare var AFRAME: any;
 declare var THREE: any;
@@ -14,20 +10,15 @@ declare var THREE: any;
   styleUrls: ['./mars-field.component.css']
 })
 export class MarsFieldComponent implements OnInit {
-  tree: Tree;
-  greenArea: GreenArea;
-  car: Car;
-  cam: CamMove;
-  eiffel: Eiffel;
 
-  constructor() { }
+  constructor(private customAframeService: CustomAframeComponentsService) { }
 
   ngOnInit() {
-    this.tree = new Tree(AFRAME);
-    this.greenArea = new GreenArea(AFRAME);
-    this.car = new Car(AFRAME, THREE);
-    this.cam = new CamMove(AFRAME);
-    this.eiffel = new Eiffel(AFRAME, THREE);
+    this.customAframeService.registerTree(AFRAME);
+    this.customAframeService.registerGreenArea(AFRAME);
+    this.customAframeService.registerCar(AFRAME, THREE);
+    this.customAframeService.registerCamMove(AFRAME);
+    this.customAframeService.registerEiffelTower(AFRAME, THREE);
   }
 
 }
