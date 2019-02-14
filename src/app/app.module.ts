@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CustomAframeComponentsService } from './services/custom-aframe-components.service';
+import { EartArComponent } from './components/eart-ar/eart-ar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CustomAframeComponentsService } from './services/custom-aframe-componen
     HomeComponent,
     NavigatorComponent,
     PageNotFoundComponent,
+    EartArComponent,
 
   ],
   imports: [
