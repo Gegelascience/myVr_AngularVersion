@@ -154,11 +154,9 @@ export class Car {
         // roues
         const roues = [];
         for (let index = 0; index < 4; index++) {
-          const roue = document.createElement('a-circle');
+          const roue = document.createElement('a-entity');
           roue.setAttribute('position', 4 + space + 0.5 + space + 1.05);
-          roue.setAttribute('material', 'color:' + teintefenetre);
-          roue.setAttribute('material', 'side:double');
-          roue.setAttribute('geometry', 'radius:' + 0.5);
+          roue.setAttribute('rings', 'radius:0.5;color:black');
           roues.push(roue);
         }
 

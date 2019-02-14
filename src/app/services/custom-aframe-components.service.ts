@@ -7,6 +7,7 @@ import { Eiffel } from 'src/app/class/eiffel';
 import { Planet } from 'src/app/class/planet';
 import { Trajectory } from '../class/trajectory';
 import { Rings } from '../class/rings';
+import { Shrub } from '../class/shrub';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class CustomAframeComponentsService {
   eiffel = false;
   trajectory = false;
   rings = false;
+  shrub = false;
 
   constructor() { }
 
@@ -77,6 +79,13 @@ export class CustomAframeComponentsService {
     if (!this.rings) {
       const tmp = new Rings(AFRAME, THREE);
       this.rings = true;
+    }
+  }
+
+  registerShrub(AFRAME: any, THREE: any) {
+    if (!this.shrub) {
+      const tmp = new Shrub(AFRAME, THREE);
+      this.shrub = true;
     }
   }
 }
