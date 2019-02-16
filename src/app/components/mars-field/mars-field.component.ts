@@ -18,6 +18,7 @@ export class MarsFieldComponent implements OnInit {
     this.customAframeService.registerRings(AFRAME);
     this.customAframeService.registerCar(AFRAME);
     this.customAframeService.registerCamMove(AFRAME);
+    this.customAframeService.registerPlanet(AFRAME);
     this.customAframeService.registerEiffelTower(AFRAME);
     this.customAframeService.registerShrub(AFRAME);
   }
