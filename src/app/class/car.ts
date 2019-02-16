@@ -1,5 +1,5 @@
 export class Car {
-  constructor(AFRAME: any, THREE: any) {
+  constructor(AFRAME: any) {
     /**
      * Component d'une voiture
      */
@@ -12,7 +12,7 @@ export class Car {
         const data = this.data;
         const el = this.el;
 
-        const shAv = new THREE.Shape();
+        const shAv = new AFRAME.THREE.Shape();
         shAv.moveTo(1, 0);
         shAv.lineTo(0, 0);
         shAv.lineTo(0, 1.5);
@@ -20,9 +20,9 @@ export class Car {
         shAv.lineTo(1, 0);
 
         const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 2 };
-        this.geometry = new THREE.ExtrudeGeometry(shAv, extrudeSettings);
-        this.material = new THREE.MeshBasicMaterial({ color: data.color });
-        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.geometry = new AFRAME.THREE.ExtrudeGeometry(shAv, extrudeSettings);
+        this.material = new AFRAME.THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
         el.setObject3D(this.attrName, this.mesh);
 
       },
@@ -39,16 +39,16 @@ export class Car {
         const data = this.data;
         const el = this.el;
 
-        const sht = new THREE.Shape();
+        const sht = new AFRAME.THREE.Shape();
         sht.moveTo(1, 0);
         sht.lineTo(0, 0);
         sht.lineTo(0, 2);
         sht.lineTo(1, 0);
 
         const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 2 };
-        this.geometry = new THREE.ExtrudeGeometry(sht, extrudeSettings);
-        this.material = new THREE.MeshBasicMaterial({ color: data.color });
-        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.geometry = new AFRAME.THREE.ExtrudeGeometry(sht, extrudeSettings);
+        this.material = new AFRAME.THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
         el.setObject3D(this.attrName, this.mesh);
 
       },
@@ -65,16 +65,16 @@ export class Car {
         const data = this.data;
         const el = this.el;
 
-        const sht = new THREE.Shape();
+        const sht = new AFRAME.THREE.Shape();
         sht.moveTo(1, 0);
         sht.lineTo(0, 0);
         sht.lineTo(0, 0.5);
         sht.lineTo(1, 0);
 
         const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 2 };
-        this.geometry = new THREE.ExtrudeGeometry(sht, extrudeSettings);
-        this.material = new THREE.MeshBasicMaterial({ color: data.color });
-        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.geometry = new AFRAME.THREE.ExtrudeGeometry(sht, extrudeSettings);
+        this.material = new AFRAME.THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
         el.setObject3D(this.attrName, this.mesh);
 
       },

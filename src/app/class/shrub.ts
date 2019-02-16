@@ -1,5 +1,5 @@
 export class Shrub {
-    constructor(AFRAME: any, THREE: any) {
+    constructor(AFRAME: any) {
         AFRAME.registerComponent('shrub', {
 
             schema: {
@@ -11,9 +11,9 @@ export class Shrub {
                 const data = this.data;
                 const el = this.el;
 
-                this.material = new THREE.MeshBasicMaterial({ color: data.color });
-                this.geometry = new THREE.ConeGeometry(data.radius, data.heigth, 20);
-                this.mesh = new THREE.Mesh(this.geometry, this.material);
+                this.material = new AFRAME.THREE.MeshBasicMaterial({ color: data.color });
+                this.geometry = new AFRAME.THREE.ConeGeometry(data.radius, data.heigth, 20);
+                this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
                 el.setObject3D(this.attrName, this.mesh);
 
             }

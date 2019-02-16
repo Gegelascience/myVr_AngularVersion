@@ -1,5 +1,5 @@
 export class Trajectory {
-    constructor(AFRAME: any, THREE: any) {
+    constructor(AFRAME: any) {
         AFRAME.registerComponent('trajectory', {
             schema: {
                 inner: { type: 'number', default: 89.8 },
@@ -9,9 +9,9 @@ export class Trajectory {
                 const data = this.data;
                 const el = this.el;
 
-                this.material = new THREE.MeshBasicMaterial({ color: 'white', side: THREE.DoubleSide });
-                this.geometry = new THREE.RingGeometry(data.inner, data.outer, 15);
-                this.mesh = new THREE.Mesh(this.geometry, this.material);
+                this.material = new AFRAME.THREE.MeshBasicMaterial({ color: 'white', side: AFRAME.THREE.DoubleSide });
+                this.geometry = new AFRAME.THREE.RingGeometry(data.inner, data.outer, 15);
+                this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
                 el.setObject3D(this.attrName, this.mesh);
 
             }

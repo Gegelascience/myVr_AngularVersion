@@ -1,5 +1,5 @@
 export class Planet {
-    constructor(AFRAME: any, THREE: any) {
+    constructor(AFRAME: any) {
         AFRAME.registerComponent('planet', {
             schema: {
                 tRevol: { type: 'number', default: 500000 },
@@ -14,10 +14,10 @@ export class Planet {
                 const data = this.data;
                 const el = this.el;
 
-                const texture = new THREE.TextureLoader().load(data.texture);
-                this.material = new THREE.MeshBasicMaterial({ map: texture });
-                this.geometry = new THREE.SphereGeometry(data.radiusPlanet, 15, 25);
-                this.mesh = new THREE.Mesh(this.geometry, this.material);
+                const texture = new AFRAME.THREE.TextureLoader().load(data.texture);
+                this.material = new AFRAME.THREE.MeshBasicMaterial({ map: texture });
+                this.geometry = new AFRAME.THREE.SphereGeometry(data.radiusPlanet, 15, 25);
+                this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
                 el.setObject3D(this.attrName, this.mesh);
 
             },

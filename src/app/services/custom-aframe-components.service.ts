@@ -26,9 +26,9 @@ export class CustomAframeComponentsService {
 
   constructor() { }
 
-  registerPlanet(AFRAME: any, THREE: any) {
+  registerPlanet(AFRAME: any) {
     if (!this.planet) {
-      const tmp = new Planet(AFRAME, THREE);
+      const tmp = new Planet(AFRAME);
       this.planet = true;
     }
   }
@@ -47,9 +47,9 @@ export class CustomAframeComponentsService {
     }
   }
 
-  registerCar(AFRAME: any, THREE: any) {
+  registerCar(AFRAME: any) {
     if (!this.car) {
-      const tmp = new Car(AFRAME, THREE);
+      const tmp = new Car(AFRAME);
       this.car = true;
     }
   }
@@ -61,30 +61,30 @@ export class CustomAframeComponentsService {
     }
   }
 
-  registerEiffelTower(AFRAME: any, THREE: any) {
+  registerEiffelTower(AFRAME: any) {
     if (!this.eiffel) {
-      const tmp = new Eiffel(AFRAME, THREE);
+      const tmp = new Eiffel(AFRAME);
       this.eiffel = true;
     }
   }
 
-  registerTrajectory(AFRAME: any, THREE: any) {
+  registerTrajectory(AFRAME: any) {
     if (!this.trajectory) {
-      const tmp = new Trajectory(AFRAME, THREE);
+      const tmp = new Trajectory(AFRAME);
       this.trajectory = true;
     }
   }
 
-  registerRings(AFRAME: any, THREE: any) {
+  registerRings(AFRAME: any) {
     if (!this.rings) {
-      const tmp = new Rings(AFRAME, THREE);
+      const tmp = new Rings(AFRAME);
       this.rings = true;
     }
   }
 
-  registerShrub(AFRAME: any, THREE: any) {
+  registerShrub(AFRAME: any) {
     if (!this.shrub) {
-      const tmp = new Shrub(AFRAME, THREE);
+      const tmp = new Shrub(AFRAME);
       this.shrub = true;
     }
   }

@@ -1,5 +1,5 @@
 export class Eiffel {
-  constructor(AFRAME: any, THREE: any) {
+  constructor(AFRAME: any) {
     /**
     * Composant de la tour Eiffel
     */
@@ -17,7 +17,7 @@ export class Eiffel {
         const data = this.data;
         const el = this.el;
 
-        const sh = new THREE.Shape();
+        const sh = new AFRAME.THREE.Shape();
 
         sh.moveTo(0, 9);
         sh.lineTo(-20, 12);
@@ -33,10 +33,10 @@ export class Eiffel {
 
 
         const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 1 };
-        this.geometry = new THREE.ExtrudeGeometry(sh, extrudeSettings);
+        this.geometry = new AFRAME.THREE.ExtrudeGeometry(sh, extrudeSettings);
 
-        this.material = new THREE.MeshBasicMaterial({ color: data.color });
-        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.material = new AFRAME.THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
         el.setObject3D(this.attrName, this.mesh);
       },
 
@@ -57,7 +57,7 @@ export class Eiffel {
         const data = this.data;
         const el = this.el;
 
-        const sh = new THREE.Shape();
+        const sh = new AFRAME.THREE.Shape();
         sh.moveTo(6, -1.5);
         sh.lineTo(0, -1.5);
         sh.lineTo(6, 28.5);
@@ -69,10 +69,10 @@ export class Eiffel {
         sh.lineTo(6, -1.5);
 
         const extrudeSettings = { bevelEnabled: false, steps: 1, amount: 1 };
-        this.geometry = new THREE.ExtrudeGeometry(sh, extrudeSettings);
+        this.geometry = new AFRAME.THREE.ExtrudeGeometry(sh, extrudeSettings);
 
-        this.material = new THREE.MeshBasicMaterial({ color: data.color });
-        this.mesh = new THREE.Mesh(this.geometry, this.material);
+        this.material = new AFRAME.THREE.MeshBasicMaterial({ color: data.color });
+        this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
         el.setObject3D(this.attrName, this.mesh);
 
       },

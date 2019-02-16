@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CustomAframeComponentsService } from 'src/app/services/custom-aframe-components.service';
 
 declare var AFRAME: any;
-declare var THREE: any;
 
 @Component({
   selector: 'app-mars-field',
@@ -16,11 +15,11 @@ export class MarsFieldComponent implements OnInit {
   ngOnInit() {
     this.customAframeService.registerTree(AFRAME);
     this.customAframeService.registerGreenArea(AFRAME);
-    this.customAframeService.registerRings(AFRAME, THREE);
-    this.customAframeService.registerCar(AFRAME, THREE);
+    this.customAframeService.registerRings(AFRAME);
+    this.customAframeService.registerCar(AFRAME);
     this.customAframeService.registerCamMove(AFRAME);
-    this.customAframeService.registerEiffelTower(AFRAME, THREE);
-    this.customAframeService.registerShrub(AFRAME, THREE);
+    this.customAframeService.registerEiffelTower(AFRAME);
+    this.customAframeService.registerShrub(AFRAME);
   }
 
 }
