@@ -14,78 +14,59 @@ import { Shrub } from '../class/shrub';
 })
 export class CustomAframeComponentsService {
 
-  planet = false;
-  tree = false;
-  greenArea = false;
-  car = false;
-  cam = false;
-  eiffel = false;
-  trajectory = false;
-  rings = false;
-  shrub = false;
-
   constructor() { }
 
   registerPlanet(AFRAME: any) {
-    if (!this.planet) {
+    if (AFRAME.components.planet === undefined) {
       const tmp = new Planet(AFRAME);
-      this.planet = true;
     }
   }
 
   registerTree(AFRAME: any) {
-    if (!this.tree) {
+    if (AFRAME.components.treecarre === undefined) {
       const tmp = new Tree(AFRAME);
-      this.tree = true;
     }
   }
 
   registerGreenArea(AFRAME: any) {
-    if (!this.greenArea) {
+    if (AFRAME.components.greenarea === undefined) {
       const tmp = new GreenArea(AFRAME);
-      this.greenArea = true;
     }
   }
 
   registerCar(AFRAME: any) {
-    if (!this.car) {
+    if (AFRAME.components.car === undefined) {
       const tmp = new Car(AFRAME);
-      this.car = true;
     }
   }
 
   registerCamMove(AFRAME: any) {
-    if (!this.cam) {
+    if (AFRAME.components.cam_move === undefined) {
       const tmp = new CamMove(AFRAME);
-      this.cam = true;
     }
   }
 
   registerEiffelTower(AFRAME: any) {
-    if (!this.eiffel) {
+    if (AFRAME.components.eiffel === undefined) {
       const tmp = new Eiffel(AFRAME);
-      this.eiffel = true;
     }
   }
 
   registerTrajectory(AFRAME: any) {
-    if (!this.trajectory) {
+    if (AFRAME.components.trajectory === undefined) {
       const tmp = new Trajectory(AFRAME);
-      this.trajectory = true;
     }
   }
 
   registerRings(AFRAME: any) {
-    if (!this.rings) {
+    if (AFRAME.components.rings === undefined) {
       const tmp = new Rings(AFRAME);
-      this.rings = true;
     }
   }
 
   registerShrub(AFRAME: any) {
-    if (!this.shrub) {
+    if (AFRAME.components.shrub === undefined) {
       const tmp = new Shrub(AFRAME);
-      this.shrub = true;
     }
   }
 }

@@ -8,14 +8,20 @@ export class Planet {
                 tRotation: { type: 'number', default: 5000 },
                 radiusPlanet: { type: 'number', default: 2 },
                 move: { type: 'boolean', default: true },
-                texture: { type: 'string', default: 'assets/textures/neptune.jpg' }
+                texture: { type: 'string', default: 'assets/textures/neptune.jpg' },
+                isColor: { type: 'boolean', default: false },
+                color: { type: 'string', default: '#404040' }
             },
             init: function () {
                 const data = this.data;
                 const el = this.el;
 
-                const texture = new AFRAME.THREE.TextureLoader().load(data.texture);
-                this.material = new AFRAME.THREE.MeshBasicMaterial({ map: texture });
+                if (!data.isColor) {
+                    const texture = new AFRAME.THREE.TextureLoader().load(data.texture);
+                    this.material = new AFRAME.THREE.MeshBasicMaterial({ map: texture });
+                } else {
+                    this.material = new AFRAME.THREE.MeshBasicMaterial({ color: data.color });
+                }
                 this.geometry = new AFRAME.THREE.SphereGeometry(data.radiusPlanet, 15, 25);
                 this.mesh = new AFRAME.THREE.Mesh(this.geometry, this.material);
                 el.setObject3D(this.attrName, this.mesh);

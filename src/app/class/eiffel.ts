@@ -139,10 +139,9 @@ export class Eiffel {
         this.el.appendChild(etage3);
 
         // antenne et station radio
-        const station = document.createElement('a-sphere');
+        const station = document.createElement('a-entity');
         station.setAttribute('position', 0 + space + 112 + space + 0);
-        station.setAttribute('material', 'color:' + colorEtage);
-        station.setAttribute('geometry', 'radius;' + 4);
+        station.setAttribute('planet', 'radiusPlanet:4;move:false;texture:assets/textures/sun.jpg;isColor:true');
         this.el.appendChild(station);
 
         const antenne = document.createElement('a-entity');
